@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Grocery — Recipes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="recipe-suggestion">
+  <header class="nav-bar">
+    <div class="nav-left">
+      <h1>🛒 Smart Grocery List</h1>
+    </div>
+    <div class="nav-right">
+      <button id="dark-toggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
+      <button id="hamburger" class="hamburger" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-link" data-page="add-item">➕<span>Add Item</span></a>
+    <a href="your-items.html" class="nav-link" data-page="your-items">📋<span>Your Items</span></a>
+    <a href="recipes.html" class="nav-link" data-page="recipe-suggestion">🍳<span>Recipe</span></a>
+    <a href="custom-recipes.html" class="nav-link" data-page="custom-recipes">📝<span>Custom Recipes</span></a>
+  </nav>
+
+  <main class="main-content">
+    <section class="card">
+      <h2>Recipe Suggestion</h2>
+      <div id="recipe-box" class="box scroll-box">Loading...</div>
+    </section>
+    <section class="card help">
+      <h3>How it works</h3>
+      <p>The app matches your grocery items with recipe ingredients to suggest simple recipes.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">Made with ❤️ — Smart Grocery List</footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
