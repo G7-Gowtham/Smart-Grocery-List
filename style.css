@@ -126,7 +126,8 @@ body {
 
 .main-nav a.active {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  border-color: rgba(0, 0, 0, 0.06)
+  border-color: rgba(0, 0, 0, 0.06);
+  background-color: var(--muted);
 }
 
 /* MAIN CONTENT (account for fixed header + nav) */
@@ -290,6 +291,12 @@ input[type="date"] {
 @media (min-width:769px) {
   .nav-right .hamburger {
     display: none
+  }
+}
+
+@media (max-width:480px) {
+  .app-name {
+    font-size: 1.1em;
   }
 }
 
