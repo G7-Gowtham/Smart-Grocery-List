@@ -127,15 +127,19 @@
       { name: 'Avocado Toast', items: ['avocado', 'bread'] }
     ];
     const all = [...predefined, ...customRecipes];
-    let suggestion = 'No matching recipe found. Add more items.';
-    for (let r of all) {
-      if (r.items.every(ing => items.some(it => it.includes(ing)))) {
-        suggestion = `<strong>${escapeHtml(r.name)}</strong><br/>Ingredients: ${r.items.join(', ')}`;
-        break;
-      }
+
+    // Collect all matching recipes
+    const matches = all.filter(r => r.items.every(ing => items.some(it => it.includes(ing))));
+
+    if (matches.length === 0) {
+      box.innerHTML = 'No matching recipe found. Add more items.';
+    } else {
+      box.innerHTML = matches.map(r =>
+        `<strong>${escapeHtml(r.name)}</strong><br/>Ingredients: ${r.items.join(', ')}`
+      ).join('<hr>');
     }
-    box.innerHTML = suggestion;
   }
+
   if (page === 'recipe-suggestion') suggestRecipe();
 
   function renderCustom() {
